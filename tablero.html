@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Tablero</title>
+  </head>
+
+  <body>
+    <script>
+      let number;
+      let boardValue; // variable para mostrar resultado
+      let index; //variable contador de posicion en fila
+      let rowIndex; // variable contador filas
+      boardValue = ""; // valor inicial como string
+      number = parseInt(prompt("Introduce un número entero sin decimales y se mostrará un tablero")); // tomar valor obtenido por teclado
+
+      for (rowIndex = 1; rowIndex <= number; rowIndex = rowIndex + 1) { // bucle recorre filas 1 al nº introducido
+        if (rowIndex % 2 != 0) { // si nº fila impar
+          for (index = 1; index <= number; index = index + 1) { // bucle posicion en fila impar (1/3/5...), si impar O si par X
+            if (index % 2 != 0) {
+              boardValue = boardValue + "O";
+            } else {
+              boardValue = boardValue + "X";
+            }
+          }
+          console.log(boardValue); // mostrar todo en pantalla
+          boardValue = ""; // vaciar valor a mostrar al empezar en cada linea
+          
+        } else { // si nº fila par
+          for (index = 1; index <= number; index = index + 1) { // bucle posicion en fila par (2/4/6...), si impar X si par O
+            if (index % 2 != 0) {
+              boardValue = boardValue + "X";
+            } else {
+              boardValue = boardValue + "O";
+            }
+          }
+          console.log(boardValue);
+          boardValue = "";
+        }
+      }
+    </script>
+  </body>
+</html>
